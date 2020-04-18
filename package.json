@@ -1,10 +1,10 @@
 {
-  "name": "react",
+  "name": "lunchtime-react",
   "version": "1.0.0",
-  "description": "React example starter project",
+  "description": "Lunchtime! App",
   "keywords": [
     "react",
-    "starter"
+    "lunchtime"
   ],
   "main": "src/index.js",
   "dependencies": {
