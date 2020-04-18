@@ -1,7 +1,17 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 export default function LunchOptions({ lunchOptions }) {
-  console.log(lunchOptions)
+  console.log(`LunchOptions lunchOptions=${lunchOptions}`)
+
+  if (!lunchOptions) {
+    return '...'
+  }
+
+  if (lunchOptions === 'error') {
+    return `Unable to retrieve lunch options`
+  }
+
   return (
     <div>
       {lunchOptions && lunchOptions.suggestion ?
@@ -22,4 +32,8 @@ export default function LunchOptions({ lunchOptions }) {
       }
     </div>
   )
+}
+
+LunchOptions.propTypes = {
+  lunchOptions: PropTypes.object,
 }

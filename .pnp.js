@@ -42,6 +42,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:25.3.0"
       ],
       [
+        "prop-types",
+        "npm:15.7.2"
+      ],
+      [
         "react",
         "npm:16.12.0"
       ],
@@ -72,6 +76,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:10.0.2"],
             ["browser-sync", "npm:2.26.7"],
             ["jest", "npm:25.3.0"],
+            ["prop-types", "npm:15.7.2"],
             ["react", "npm:16.12.0"],
             ["react-dom", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:16.12.0"],
             ["react-error-boundary", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:1.2.5"],
@@ -11134,6 +11139,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:10.0.2"],
             ["browser-sync", "npm:2.26.7"],
             ["jest", "npm:25.3.0"],
+            ["prop-types", "npm:15.7.2"],
             ["react", "npm:16.12.0"],
             ["react-dom", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:16.12.0"],
             ["react-error-boundary", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:1.2.5"],
