@@ -5,7 +5,7 @@ import LunchSuggestion from "./LunchSuggestion";
 
 export default function LunchOptionList({ lunchOptions }) {
   if (!lunchOptions) {
-    return <span>...</span>
+    return <div className="loading">Loading...</div>
   }
   if (lunchOptions === 'error') {
     return <div className="error">Unable to retrieve lunch options.</div>

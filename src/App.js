@@ -5,16 +5,19 @@ import fetchLunchOptions from "./service/Lunchtime"
 
 export default function App() {
   const [lunchOptions, setLunchOptions] = useState(null)
-  const [loc, setLoc] = useState(() => window.localStorage.getItem('loc') || '')
+  const [loc, setLoc] = useState(null)
   const [mode, setMode] = useState(() => window.localStorage.getItem('mode') || 'walk')
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      const lat = position.coords.latitude
-      const long = position.coords.longitude
-      const location = `${lat},${long}`
-      setLoc(location)
-    })
+    if (!loc) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        const lat = position.coords.latitude
+        const long = position.coords.longitude
+        const location = `${lat},${long}`
+        setLoc(location)
+      })
+    }
+    return () => setLoc(null)
   }, [])
 
   const handleFetchLunchOptions = (loc, mode) => {
@@ -25,9 +28,7 @@ export default function App() {
   }
 
   useEffect(() => {
-    window.localStorage.setItem('loc', loc)
     window.localStorage.setItem('mode', mode)
-
     if (loc && mode) {
       handleFetchLunchOptions(loc, mode)
     }

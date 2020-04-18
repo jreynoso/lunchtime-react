@@ -16,7 +16,6 @@ To create a production bundle, use `yarn build`.\
 Then run the production build with `yarn dlx serve -s build`.
 
 ### Roadmap
-- implement the basic web app
 - build and test
 - style the app
 - allow manual input of location if auto-detection is not available
