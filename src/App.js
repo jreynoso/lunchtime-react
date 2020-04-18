@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import "./styles.css"
-import LunchOptions from "./components/LunchOptions"
+import LunchOptionList from "./components/LunchOptionList"
 import fetchLunchOptions from "./service/Lunchtime"
 
 export default function App() {
@@ -60,7 +60,7 @@ export default function App() {
         <button type="submit">Let's Eat!</button>
       </form>
       <hr/>
-      <LunchOptions lunchOptions={lunchOptions} />
+      <LunchOptionList lunchOptions={lunchOptions} />
     </div>
   )
 }

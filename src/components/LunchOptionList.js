@@ -1,7 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
+import LunchOption from "./LunchOption";
+import LunchSuggestion from "./LunchSuggestion";
 
-export default function LunchOptions({ lunchOptions }) {
+export default function LunchOptionList({ lunchOptions }) {
   if (!lunchOptions) {
     return <span>...</span>
   }
@@ -15,23 +17,17 @@ export default function LunchOptions({ lunchOptions }) {
   const lunchOptionList = lunchOptions.options.filter(lunchOption => lunchOption.id !== lunchOptions.suggestion.id)
   return (
     <div>
-      {lunchOptions.suggestion &&
-      <h2>Consider: {lunchOptions.suggestion.name}</h2>
-      }
-      {lunchOptionList &&
-      <><h2>Other options:</h2>
+      {lunchOptions.suggestion && <LunchSuggestion {...lunchOptions.suggestion} />}
+      {lunchOptionList && <>
+      <h2>Other options:</h2>
       <ul>
-        {lunchOptionList.map(lunchOption => (
-          <li key={lunchOption.id}>
-            {lunchOption.name}
-          </li>
-        ))}
+        {lunchOptionList.map(lunchOption => <LunchOption key={lunchOption.id} {...lunchOption} />)}
       </ul></>
       }
     </div>
   )
 }
 
-LunchOptions.propTypes = {
+LunchOptionList.propTypes = {
   lunchOptions: PropTypes.object,
 }
