@@ -2,26 +2,31 @@ import React from "react"
 import PropTypes from "prop-types"
 
 export default function LunchOptions({ lunchOptions }) {
+  if (!lunchOptions) {
+    return <span>...</span>
+  }
   if (lunchOptions === 'error') {
-    return <div className="error">`Unable to retrieve lunch options`</div>
+    return <div className="error">Unable to retrieve lunch options.</div>
+  }
+  if (!lunchOptions.options || lunchOptions.options.length === 0) {
+    return <div>No lunch options within range. :(</div>
   }
 
+  const lunchOptionList = lunchOptions.options.filter(lunchOption => lunchOption.id !== lunchOptions.suggestion.id)
   return (
     <div>
-      {!lunchOptions &&
-      <span>...</span>
-      }
-      {lunchOptions && lunchOptions.suggestion &&
+      {lunchOptions.suggestion &&
       <h2>Consider: {lunchOptions.suggestion.name}</h2>
       }
-      {lunchOptions && lunchOptions.options &&
+      {lunchOptionList &&
+      <><h2>Other options:</h2>
       <ul>
-        {lunchOptions.options.map(lunchOption => (
+        {lunchOptionList.map(lunchOption => (
           <li key={lunchOption.id}>
             {lunchOption.name}
           </li>
         ))}
-      </ul>
+      </ul></>
       }
     </div>
   )

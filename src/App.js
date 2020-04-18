@@ -17,22 +17,25 @@ export default function App() {
     })
   }, [])
 
+  const handleFetchLunchOptions = (loc, mode) => {
+    fetchLunchOptions(loc, mode).then(
+      resultData => setLunchOptions(resultData),
+      () => setLunchOptions('error')
+    )
+  }
+
   useEffect(() => {
     window.localStorage.setItem('loc', loc)
     window.localStorage.setItem('mode', mode)
 
     if (loc && mode) {
-      fetchLunchOptions(loc, mode).then(resultData => {
-        setLunchOptions(resultData)
-      })
+      handleFetchLunchOptions(loc, mode)
     }
   }, [loc, mode])
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    fetchLunchOptions(loc, mode).then(resultData => {
-      setLunchOptions(resultData)
-    })
+    handleFetchLunchOptions(loc, mode)
   }
 
   const handleChange = (event) => {
