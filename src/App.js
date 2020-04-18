@@ -9,20 +9,15 @@ export default function App() {
   const [mode, setMode] = useState(() => window.localStorage.getItem('mode') || 'walk')
 
   useEffect(() => {
-    console.log('Getting geolocation')
     navigator.geolocation.getCurrentPosition(function(position) {
-      console.log('Got geolocation')
       const lat = position.coords.latitude
       const long = position.coords.longitude
       const location = `${lat},${long}`
-      console.log(`lat=${lat}`)
-      console.log(`long=${long}`)
       setLoc(location)
     })
   }, [])
 
   useEffect(() => {
-    console.log('App.useEffect[loc, mode] called')
     window.localStorage.setItem('loc', loc)
     window.localStorage.setItem('mode', mode)
 
@@ -41,11 +36,8 @@ export default function App() {
   }
 
   const handleChange = (event) => {
-    console.log(event.target)
     setMode(event.target.value)
   }
-
-  console.log('App rendering')
 
   return (
     <div className="App">
