@@ -1,10 +1,10 @@
 {
-  "name": "react",
+  "name": "lunchtime-react",
   "version": "1.0.0",
-  "description": "React example starter project",
+  "description": "Lunchtime! App",
   "keywords": [
     "react",
-    "starter"
+    "lunchtime"
   ],
   "main": "src/index.js",
   "dependencies": {
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
+    "prop-types": "^15.7.2",
     "typescript": "3.8.3"
   },
   "scripts": {

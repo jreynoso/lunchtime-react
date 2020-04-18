@@ -9970,6 +9970,22 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"lunchtime-react@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "lunchtime-react@workspace:."
+  dependencies:
+    "@testing-library/react": 10.0.2
+    browser-sync: ^2.26.7
+    jest: 25.3.0
+    prop-types: ^15.7.2
+    react: 16.12.0
+    react-dom: 16.12.0
+    react-error-boundary: 1.2.5
+    react-scripts: ^3.4.1
+    typescript: 3.8.3
+  languageName: unknown
+  linkType: soft
+
 "make-dir@npm:^2.0.0, make-dir@npm:^2.1.0":
   version: 2.1.0
   resolution: "make-dir@npm:2.1.0"
@@ -13006,21 +13022,6 @@ fsevents@^1.2.7:
   checksum: 2/b6feaa411a4280e0da177df18095da85508fd0285cfbd389109365a818cec10631dbed63123a5137734f84321bab0d35d508bf7f1fc4f9011ea822f6c1508be8
   languageName: node
   linkType: hard
-
-"react@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "react@workspace:."
-  dependencies:
-    "@testing-library/react": 10.0.2
-    browser-sync: ^2.26.7
-    jest: 25.3.0
-    react: 16.12.0
-    react-dom: 16.12.0
-    react-error-boundary: 1.2.5
-    react-scripts: ^3.4.1
-    typescript: 3.8.3
-  languageName: unknown
-  linkType: soft
 
 "read-pkg-up@npm:^1.0.1":
   version: 1.0.1
