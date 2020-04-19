@@ -1,9 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
-import LunchOption from "./LunchOption";
-import LunchSuggestion from "./LunchSuggestion";
+import React from 'react'
+import PropTypes from 'prop-types'
+import LunchOption from './LunchOption'
+import LunchSuggestion from './LunchSuggestion'
 
-export default function LunchOptionList({ lunchOptions }) {
+export default function LunchOptionList ({ lunchOptions }) {
   if (!lunchOptions) {
     return <div className="loading">Loading...</div>
   }
@@ -19,15 +19,15 @@ export default function LunchOptionList({ lunchOptions }) {
     <div>
       {lunchOptions.suggestion && <LunchSuggestion {...lunchOptions.suggestion} />}
       {lunchOptionList && <>
-      <h2>Other options:</h2>
-      <ul>
-        {lunchOptionList.map(lunchOption => <LunchOption key={lunchOption.id} {...lunchOption} />)}
-      </ul></>
+        <h2>Other options:</h2>
+        <ul>
+          {lunchOptionList.map(lunchOption => <LunchOption key={lunchOption.id} {...lunchOption} />)}
+        </ul></>
       }
     </div>
   )
 }
 
 LunchOptionList.propTypes = {
-  lunchOptions: PropTypes.object,
+  lunchOptions: PropTypes.object
 }
