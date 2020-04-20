@@ -1,0 +1,17 @@
+{
+  "name": "Lunchtime!",
+  "short_name": "LT!",
+  "theme_color": "#38761d",
+  "background_color": "#686868",
+  "lang": "en-US",
+  "start_url": "http://dispassionproject.com/lunchtime",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "http://dispassionproject.com/lunchtime/img/lunchtime-logo.png",
+      "sizes": "200x200",
+      "type": "image/png"
+    }
+  ]
+}
