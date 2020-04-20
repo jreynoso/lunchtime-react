@@ -45,6 +45,7 @@
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint --fix src/**/*.js"
   },
+  "pre-commit": "lint",
   "browserslist": [
     ">0.2%",
     "not dead",
