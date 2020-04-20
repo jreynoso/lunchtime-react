@@ -2,6 +2,10 @@
   "name": "lunchtime-react",
   "version": "1.0.0",
   "description": "Lunchtime! App",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jreynoso/lunchtime-react.git"
+  },
   "keywords": [
     "react",
     "lunchtime"
@@ -20,12 +24,14 @@
     "browser-sync": "^2.26.7",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
+    "eslint-import-resolver-node": "^0.3.3",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-jest-dom": "^2.0.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
     "eslint-plugin-standard": "^4.0.1",
     "faker": "^4.1.0",
     "prop-types": "^15.7.2",
@@ -36,7 +42,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint --fix src/**/*.js"
   },
   "browserslist": [
     ">0.2%",

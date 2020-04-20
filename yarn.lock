@@ -5956,7 +5956,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-import-resolver-node@npm:^0.3.2":
+"eslint-import-resolver-node@npm:^0.3.2, eslint-import-resolver-node@npm:^0.3.3":
   version: 0.3.3
   resolution: "eslint-import-resolver-node@npm:0.3.3"
   dependencies:
@@ -6127,6 +6127,15 @@ __metadata:
   peerDependencies:
     eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
   checksum: 2/99dc3276cd8f20428e0ec4d9b15433ce22b87ef9f1c82279369a98b7c663f9092ff63f63683a948f207ab75cceedd808cac2ca870011b733a89b0fc753eb0f91
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-react-hooks@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "eslint-plugin-react-hooks@npm:3.0.0"
+  peerDependencies:
+    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
+  checksum: 2/fecba0d0c54645163e4fcb792c0370297b6a99f529125fdb7367339d449b2f048e5bdafc27c948e9ad0d1a1e46931d41c2b60efc9ce19c6fd6b0fe1d829a0b73
   languageName: node
   linkType: hard
 
@@ -10135,12 +10144,14 @@ fsevents@^1.2.7:
     browser-sync: ^2.26.7
     eslint: ^6.8.0
     eslint-config-standard: ^14.1.1
+    eslint-import-resolver-node: ^0.3.3
     eslint-plugin-import: ^2.20.2
     eslint-plugin-jest: ^23.8.2
     eslint-plugin-jest-dom: ^2.0.1
     eslint-plugin-node: ^11.1.0
     eslint-plugin-promise: ^4.2.1
     eslint-plugin-react: ^7.19.0
+    eslint-plugin-react-hooks: ^3.0.0
     eslint-plugin-standard: ^4.0.1
     faker: ^4.1.0
     jest: 25.3.0

@@ -18,7 +18,10 @@ parserOptions:
   sourceType: module
 plugins:
   - react
-  - import
+  - react-hooks
   - jest
   - jest-dom
 rules: {}
+settings:
+  react:
+    version: detect
