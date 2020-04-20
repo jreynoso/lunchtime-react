@@ -1,5 +1,5 @@
-export default function fetchLunchOptions(loc, mode) {
+export default function fetchLunchOptions (loc, mode) {
   return window.fetch(`http://localhost:8080/lunchtime?loc=${loc}&mode=${mode}`)
-  .then(r => r.json())
-  .then(response => response || 'empty')
+    .then(r => r.json())
+    .then(response => response || 'empty')
 }
