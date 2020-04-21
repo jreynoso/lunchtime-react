@@ -17,6 +17,7 @@ Then run the production build with `yarn dlx serve -s build`.
 
 ### Roadmap
 - add error boundaries
-- add modules to avoid relative imports
+- more polish on the ui
 - add some routes ("about" page)
 - allow manual input of location if auto-detection is not available (zipcode)
+- add modules to avoid relative imports

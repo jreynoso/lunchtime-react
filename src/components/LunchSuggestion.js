@@ -1,12 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import LunchOption from './LunchOption'
 
-export default function LunchSuggestion ({ name }) {
+export default function LunchSuggestion (lunchOptions) {
   return (
-    <h2>Consider: {name}</h2>
+    <Jumbotron>
+      <h2>Consider:</h2>
+      <LunchOption {...lunchOptions} />
+    </Jumbotron>
   )
 }
 
 LunchSuggestion.propTypes = {
-  name: PropTypes.string
+  lunchOptions: PropTypes.object
 }

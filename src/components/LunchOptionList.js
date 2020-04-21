@@ -2,29 +2,39 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import LunchOption from './LunchOption'
 import LunchSuggestion from './LunchSuggestion'
+import Alert from 'react-bootstrap/Alert'
+import Container from 'react-bootstrap/Container'
+import Spinner from 'react-bootstrap/Spinner'
 
 export default function LunchOptionList ({ lunchOptions }) {
   if (!lunchOptions) {
-    return <div className="loading">Loading...</div>
+    return (
+      <Spinner animation="border" role="status">
+        <span className="sr-only">Loading...</span>
+      </Spinner>
+    )
   }
   if (lunchOptions === 'error') {
-    return <div className="error">Unable to retrieve lunch options.</div>
+    return <Alert className="error">Unable to retrieve lunch options.</Alert>
   }
   if (!lunchOptions.options || lunchOptions.options.length === 0) {
-    return <div>No lunch options within range. :(</div>
+    return <Alert className="warning">No lunch options within range. :(</Alert>
   }
 
   const lunchOptionList = lunchOptions.options.filter(lunchOption => lunchOption.id !== lunchOptions.suggestion.id)
   return (
-    <div>
+    <Container>
       {lunchOptions.suggestion && <LunchSuggestion {...lunchOptions.suggestion} />}
       {lunchOptionList && <>
         <h2>Other options:</h2>
-        <ul>
+        <ul className="list-unstyled">
           {lunchOptionList.map(lunchOption => <LunchOption key={lunchOption.id} {...lunchOption} />)}
-        </ul></>
+        </ul>
+        <br/>
+        <br/>
+      </>
       }
-    </div>
+    </Container>
   )
 }
 

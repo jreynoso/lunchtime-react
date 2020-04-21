@@ -35,12 +35,11 @@ test('should show the lunch suggestion in lunch options', () => {
     suggestion: testSuggestedLunchOption,
     options: [testSuggestedLunchOption, testOtherLunchOption]
   }
-  const { getByText, queryByText } = render(
+  const { getByText } = render(
     <LunchOptionList lunchOptions={testLunchOptions} />
   )
 
-  expect(getByText(`Consider: ${testSuggestedLunchOption.name}`)).toBeInTheDocument()
-  expect(queryByText(testSuggestedLunchOption.name)).toBeNull()
+  expect(getByText(testSuggestedLunchOption.name)).toBeInTheDocument()
   expect(getByText(testOtherLunchOption.name)).toBeInTheDocument()
 })
 
