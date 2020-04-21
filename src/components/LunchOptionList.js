@@ -15,10 +15,10 @@ export default function LunchOptionList ({ lunchOptions }) {
     )
   }
   if (lunchOptions === 'error') {
-    return <Alert className="error">Unable to retrieve lunch options.</Alert>
+    return <Alert variant="danger">Unable to retrieve lunch options.</Alert>
   }
   if (!lunchOptions.options || lunchOptions.options.length === 0) {
-    return <Alert className="warning">No lunch options within range. :(</Alert>
+    return <Alert variant="warning">No lunch options within range. :(</Alert>
   }
 
   const lunchOptionList = lunchOptions.options.filter(lunchOption => lunchOption.id !== lunchOptions.suggestion.id)
