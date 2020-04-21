@@ -1,12 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Media from 'react-bootstrap/Media'
+import Rating from './Rating'
 
-export default function LunchOption ({ name }) {
+export default function LunchOption ({ name, imageUrl, address, rating }) {
   return (
-    <li>{name}</li>
+    <Media as="li">
+      <img
+        width={64}
+        height={64}
+        className="mr-3"
+        src={imageUrl}
+        alt="lunch option"
+      />
+      <Media.Body>
+        <h5>{name}</h5>
+        <p><Rating rating={rating}/> {address}</p>
+      </Media.Body>
+    </Media>
   )
 }
 
 LunchOption.propTypes = {
-  name: PropTypes.string
+  address: PropTypes.string,
+  imageUrl: PropTypes.string,
+  name: PropTypes.string,
+  rating: PropTypes.number
 }

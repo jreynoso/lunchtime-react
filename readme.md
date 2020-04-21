@@ -16,8 +16,8 @@ To create a production bundle, use `yarn build`.\
 Then run the production build with `yarn dlx serve -s build`.
 
 ### Roadmap
-- style the app
 - add error boundaries
+- more polish on the ui
+- add some routes ("about" page)
+- allow manual input of location if auto-detection is not available (zipcode)
 - add modules to avoid relative imports
-- add some routes (about page)
-- allow manual input of location if auto-detection is not available

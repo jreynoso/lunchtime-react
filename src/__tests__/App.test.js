@@ -4,7 +4,7 @@ import Faker from 'faker'
 import { render } from '@testing-library/react'
 import App from '../App'
 
-test('should render page with default mode selected and enabled submit button', () => {
+test('should render page with mode buttons enabled', () => {
   const mockPosition = {
     coords: {
       latitude: Faker.address.latitude(),
@@ -23,6 +23,7 @@ test('should render page with default mode selected and enabled submit button', 
   }
 
   const testRender = render(<App/>)
-  expect(testRender.getByLabelText('How will you get there?')).toHaveValue('walk')
-  expect(testRender.getByText('Let\'s Eat!')).toBeEnabled()
+  expect(testRender.getByText('Walk')).toBeEnabled()
+  expect(testRender.getByText('Scoot')).toBeEnabled()
+  expect(testRender.getByText('Drive')).toBeEnabled()
 })
