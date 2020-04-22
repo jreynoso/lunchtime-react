@@ -3,6 +3,6 @@
     "lunchtime_api_url": "http://localhost:8080"
   },
   "production": {
-    "lunchtime_api_url": "http://localhost:8080"
+    "lunchtime_api_url": "https://api.dispassionproject.com"
   }
 }
