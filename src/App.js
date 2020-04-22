@@ -48,12 +48,16 @@ export default function App () {
   }, [loc, mode])
 
   const handleChange = (event) => {
-    setMode(event.target.value)
+    if (mode !== event.target.value) {
+      setMode(event.target.value)
+    } else if (loc && mode) {
+      handleFetchLunchOptions(loc, mode)
+    }
   }
 
   return (
     <Container fluid>
-      <Navbar bg="dark" expand="md">
+      <Navbar bg="dark" expand="sm">
         <Navbar.Brand href="./">
           <img
             alt="Lunchtime!"
