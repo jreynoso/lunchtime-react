@@ -6,6 +6,7 @@
     "type": "git",
     "url": "git@github.com:jreynoso/lunchtime-react.git"
   },
+  "homepage": "https://lunchtime.dispassionproject.com",
   "keywords": [
     "react",
     "lunchtime"
