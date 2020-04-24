@@ -39,5 +39,5 @@ export default function LunchOptionList ({ lunchOptions }) {
 }
 
 LunchOptionList.propTypes = {
-  lunchOptions: PropTypes.object
+  lunchOptions: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
 }
