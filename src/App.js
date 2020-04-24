@@ -80,17 +80,17 @@ export default function App () {
       <Container fluid>
         {error && <Alert variant="danger">{error}</Alert>}
         <LunchOptionList lunchOptions={lunchOptions}/>
-        <Navbar fixed="bottom" bg="dark" expand="lg" variant="dark">
-          <Nav className="justify-content-end">
-            <Navbar.Text>
-              {'Copyright © '}
-              <a href="http://dispassionproject.com/">{' dispassionproject '}</a>
-              {new Date().getFullYear()}
-              {'.'}
-            </Navbar.Text>
-          </Nav>
-        </Navbar>
       </Container>
+      <Navbar fixed="bottom" bg="dark" expand="lg" variant="dark">
+        <Nav className="m-auto">
+          <Navbar.Text>
+            {'Copyright © '}
+            <a href="http://dispassionproject.com/">{' dispassionproject '}</a>
+            {new Date().getFullYear()}
+            {'.'}
+          </Navbar.Text>
+        </Nav>
+      </Navbar>
     </>
   )
 }
