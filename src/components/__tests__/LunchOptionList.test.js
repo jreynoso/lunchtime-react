@@ -7,7 +7,7 @@ import LunchOptionList from '../LunchOptionList'
 test('should show loading text when no lunch options', () => {
   const testLunchOptions = null
   const { getByText } = render(
-    <LunchOptionList lunchOptions={testLunchOptions} />
+    <LunchOptionList lunchOptions={testLunchOptions}/>
   )
   expect(getByText('Loading...')).toBeInTheDocument()
 })
@@ -15,7 +15,7 @@ test('should show loading text when no lunch options', () => {
 test('should show error text when lunch options is error', () => {
   const errorLunchOptions = 'error'
   const { getByText } = render(
-    <LunchOptionList lunchOptions={errorLunchOptions} />
+    <LunchOptionList lunchOptions={errorLunchOptions}/>
   )
   expect(getByText('Unable to retrieve lunch options.')).toBeInTheDocument()
 })
@@ -23,7 +23,7 @@ test('should show error text when lunch options is error', () => {
 test('should show no lunch options text when no lunch options present', () => {
   const noLunchOptions = {}
   const { getByText } = render(
-    <LunchOptionList lunchOptions={noLunchOptions} />
+    <LunchOptionList lunchOptions={noLunchOptions}/>
   )
   expect(getByText('No lunch options within range. :(')).toBeInTheDocument()
 })
@@ -36,7 +36,7 @@ test('should show the lunch suggestion in lunch options', () => {
     options: [testSuggestedLunchOption, testOtherLunchOption]
   }
   const { getByText } = render(
-    <LunchOptionList lunchOptions={testLunchOptions} />
+    <LunchOptionList lunchOptions={testLunchOptions}/>
   )
 
   expect(getByText(testSuggestedLunchOption.name)).toBeInTheDocument()

@@ -56,20 +56,19 @@ export default function App () {
   }
 
   return (
-    <Container fluid>
+    <>
       <Navbar bg="dark" expand="sm">
         <Navbar.Brand href="./">
           <img
             alt="Lunchtime!"
             src="/img/lunchtime-full.svg"
-            width="400"
             height="80"
             className="d-inline-block align-top"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Form inline>
+          <Form inline className="ml-auto">
             <ButtonGroup title={'How will you get there?'} size="lg">
               <Button variant="outline-light" disabled={!loc} onClick={handleChange} value="walk">{'Walk'}</Button>
               <Button variant="outline-light" disabled={!loc} onClick={handleChange} value="scoot">{'Scoot'}</Button>
@@ -78,10 +77,12 @@ export default function App () {
           </Form>
         </Navbar.Collapse>
       </Navbar>
-      {error && <Alert variant="danger">{error}</Alert>}
-      <LunchOptionList lunchOptions={lunchOptions}/>
+      <Container fluid>
+        {error && <Alert variant="danger">{error}</Alert>}
+        <LunchOptionList lunchOptions={lunchOptions}/>
+      </Container>
       <Navbar fixed="bottom" bg="dark" expand="lg" variant="dark">
-        <Nav className="justify-content-end">
+        <Nav className="m-auto">
           <Navbar.Text>
             {'Copyright © '}
             <a href="http://dispassionproject.com/">{' dispassionproject '}</a>
@@ -90,6 +91,6 @@ export default function App () {
           </Navbar.Text>
         </Nav>
       </Navbar>
-    </Container>
+    </>
   )
 }
