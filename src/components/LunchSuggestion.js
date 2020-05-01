@@ -4,10 +4,14 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
 import LunchOption from './LunchOption'
 
 export default function LunchSuggestion (lunchOptions) {
+  const options = {
+    type: 'div',
+    ...lunchOptions
+  }
   return (
     <Jumbotron>
       <h2>Consider:</h2>
-      <LunchOption {...lunchOptions} />
+      <LunchOption {...options} />
     </Jumbotron>
   )
 }

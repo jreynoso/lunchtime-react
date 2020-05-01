@@ -77,7 +77,7 @@ export default function App () {
           </ButtonGroup>
         </Navbar.Collapse>
       </Navbar>
-      <Container fluid>
+      <Container fluid="sm">
         {error && <Alert variant="danger">{error}</Alert>}
         <LunchOptionList lunchOptions={lunchOptions}/>
       </Container>

@@ -4,25 +4,20 @@ import Faker from 'faker'
 import { render } from '@testing-library/react'
 import App from '../App'
 
-test('should render page with mode buttons enabled', () => {
+test('should render page with mode buttons enabled', async () => {
   const mockPosition = {
     coords: {
-      latitude: Faker.address.latitude(),
-      longitude: Faker.address.longitude()
+      latitude: parseFloat(Faker.address.latitude()),
+      longitude: parseFloat(Faker.address.longitude())
     }
   }
   global.navigator.geolocation = {
     getCurrentPosition: jest.fn().mockImplementationOnce(success => Promise.resolve(
       success(mockPosition))
-    ),
-    clearWatch: jest.fn(),
-    watchPosition: onChange => {
-      onChange(mockPosition)
-      return Faker.random.uuid()
-    }
+    )
   }
 
-  const testRender = render(<App/>)
+  const testRender = await render(<App/>)
   expect(testRender.getByText('Walk')).toBeEnabled()
   expect(testRender.getByText('Scoot')).toBeEnabled()
   expect(testRender.getByText('Drive')).toBeEnabled()

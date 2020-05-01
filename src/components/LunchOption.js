@@ -4,27 +4,26 @@ import Media from 'react-bootstrap/Media'
 import Nav from 'react-bootstrap/Nav'
 import Rating from './Rating'
 
-export default function LunchOption ({ name, imageUrl, address, rating }) {
-
+export default function LunchOption ({ name, imageUrl, address, rating, type = 'li' }) {
   const getGoogleMapsLink = (name) => {
     return `https://www.google.com/maps/search/${encodeURIComponent(name).replace(/%20/g, '+')}`
   }
 
   return (
-    <Media as="li">
-      <img
-        width={64}
-        height={64}
-        className="mr-3"
-        src={imageUrl}
-        alt="lunch option"
-      />
+    <Media as={type}>
+      <Nav.Link href={getGoogleMapsLink(name)}>
+        <img
+          width={64}
+          height={64}
+          className="m-4"
+          src={imageUrl}
+          alt="lunch option"
+        />
+      </Nav.Link>
       <Media.Body>
-        <Nav.Link href={getGoogleMapsLink(name)}>
-          <h5>{name}</h5>
-          <Rating rating={rating}/>
-          <p>{address}</p>
-        </Nav.Link>
+        <h5>{name}</h5>
+        <Rating rating={rating}/>
+        <p>{address}</p>
       </Media.Body>
     </Media>
   )
@@ -34,5 +33,6 @@ LunchOption.propTypes = {
   address: PropTypes.string,
   imageUrl: PropTypes.string,
   name: PropTypes.string,
-  rating: PropTypes.number
+  rating: PropTypes.number,
+  type: PropTypes.string
 }
