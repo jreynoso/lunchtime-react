@@ -3,7 +3,6 @@ import Alert from 'react-bootstrap/Alert'
 import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Container from 'react-bootstrap/Container'
-import Form from 'react-bootstrap/Form'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import LunchOptionList from './components/LunchOptionList'
@@ -23,7 +22,7 @@ export default function App () {
   }
 
   const onChange = ({ coords }) => {
-    setLoc(`${coords.latitude},${coords.longitude}`)
+    setLoc(`${coords.latitude.toFixed(6)},${coords.longitude.toFixed(6)}`)
   }
 
   const onError = (error) => {
@@ -35,7 +34,12 @@ export default function App () {
       setError('Geolocation is not supported')
       return
     }
-    const watcher = navigator.geolocation.watchPosition(onChange, onError)
+    const options = {
+      enableHighAccuracy: false,
+      timeout: 5000,
+      maximumAge: 60000
+    }
+    const watcher = navigator.geolocation.watchPosition(onChange, onError, options)
     return () => watcher && navigator.geolocation.clearWatch(watcher)
   }, [])
 
@@ -62,19 +66,17 @@ export default function App () {
           <img
             alt="Lunchtime!"
             src="/img/lunchtime-full.svg"
-            height="80"
+            width="305"
             className="d-inline-block align-top"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Form inline className="ml-auto">
-            <ButtonGroup title={'How will you get there?'} size="lg">
-              <Button variant="outline-light" disabled={!loc} onClick={handleChange} value="walk">{'Walk'}</Button>
-              <Button variant="outline-light" disabled={!loc} onClick={handleChange} value="scoot">{'Scoot'}</Button>
-              <Button variant="outline-light" disabled={!loc} onClick={handleChange} value="drive">{'Drive'}</Button>
-            </ButtonGroup>
-          </Form>
+          <ButtonGroup title={'How will you get there?'} size="lg" className="ml-auto">
+            <Button variant="outline-light" disabled={!loc} onClick={handleChange} value="walk">{'Walk'}</Button>
+            <Button variant="outline-light" disabled={!loc} onClick={handleChange} value="scoot">{'Scoot'}</Button>
+            <Button variant="outline-light" disabled={!loc} onClick={handleChange} value="drive">{'Drive'}</Button>
+          </ButtonGroup>
         </Navbar.Collapse>
       </Navbar>
       <Container fluid>
