@@ -12,7 +12,7 @@ export default function App () {
   const [loc, setLoc] = useState(null)
   const [error, setError] = useState(null)
   const [lunchOptions, setLunchOptions] = useState(null)
-  const [mode, setMode] = useState(() => window.localStorage.getItem('mode'))
+  const [mode, setMode] = useState(() => window.localStorage.getItem('mode') || 'walk')
 
   const handleFetchLunchOptions = (loc, mode) => {
     fetchLunchOptions(loc, mode).then(
@@ -26,7 +26,7 @@ export default function App () {
   }
 
   const onError = (error) => {
-    setError(error.message)
+    setError(`Failed to get location: ${error.message}`)
   }
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function App () {
     }
     const options = {
       enableHighAccuracy: false,
-      timeout: 5000
+      timeout: 10000
     }
     navigator.geolocation.getCurrentPosition(onChange, onError, options)
   }, [])
