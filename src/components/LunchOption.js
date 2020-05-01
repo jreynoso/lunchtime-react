@@ -11,16 +11,16 @@ export default function LunchOption ({ name, imageUrl, address, rating, type = '
 
   return (
     <Media as={type}>
-      <Nav.Link href={getGoogleMapsLink(name)}>
+      <Nav.Link href={getGoogleMapsLink(name)} className="mt-auto mb-auto">
         <img
-          width={64}
-          height={64}
-          className="m-4"
+          width={80}
+          height={80}
+          className="m-3"
           src={imageUrl}
           alt="lunch option"
         />
       </Nav.Link>
-      <Media.Body>
+      <Media.Body className="mt-auto mb-auto py-3">
         <h5>{name}</h5>
         <Rating rating={rating}/>
         <p>{address}</p>
