@@ -36,11 +36,9 @@ export default function App () {
     }
     const options = {
       enableHighAccuracy: false,
-      timeout: 5000,
-      maximumAge: 60000
+      timeout: 5000
     }
-    const watcher = navigator.geolocation.watchPosition(onChange, onError, options)
-    return () => watcher && navigator.geolocation.clearWatch(watcher)
+    navigator.geolocation.getCurrentPosition(onChange, onError, options)
   }, [])
 
   useEffect(() => {
