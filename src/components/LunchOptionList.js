@@ -4,7 +4,6 @@ import LunchOption from './LunchOption'
 import LunchSuggestion from './LunchSuggestion'
 import Alert from 'react-bootstrap/Alert'
 import Col from 'react-bootstrap/Col'
-import Navbar from 'react-bootstrap/Navbar'
 import Row from 'react-bootstrap/Row'
 import Spinner from 'react-bootstrap/Spinner'
 
