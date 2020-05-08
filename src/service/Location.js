@@ -1,5 +1,5 @@
 function getIpAddress (onError) {
-  return window.fetch('http://api.ipify.org?format=json')
+  return window.fetch('https://api.ipify.org?format=json')
     .then(r => r.json())
     .then(json => json.ip, onError)
 }
