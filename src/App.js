@@ -96,45 +96,47 @@ export default function App () {
   return (
     <>
       <Navbar bg="dark" expand="sm">
-        <Navbar.Brand href="./">
+        <Navbar.Brand href="./" style={{ maxWidth: 280, marginRight: 0 }}>
           <img
             alt="Lunchtime!"
             src="/img/lunchtime-full.svg"
-            width="305"
+            width="100%"
             className="d-inline-block align-top"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
-          <ButtonGroup title={'How will you get there?'} size="lg" className="ml-auto">
-            <Button
-              variant="outline-light"
-              disabled={!loc}
-              active={mode === 'walk'}
-              onClick={() => handleChange('walk')}
-              data-testid="Walk"
-            >
-              <RiWalkLine/>
-            </Button>
-            <Button
-              variant="outline-light"
-              disabled={!loc}
-              active={mode === 'scoot'}
-              onClick={() => handleChange('scoot')}
-              data-testid="Scoot"
-            >
-              <RiEBike2Line/>
-            </Button>
-            <Button
-              variant="outline-light"
-              disabled={!loc}
-              active={mode === 'drive'}
-              onClick={() => handleChange('drive')}
-              data-testid="Drive"
-            >
-              <FaCarSide/>
-            </Button>
-          </ButtonGroup>
+          <Nav className="justify-content-center" style={{ width: '100%' }}>
+            <ButtonGroup title={'How will you get there?'} size="lg" className="ml-auto">
+              <Button
+                variant="outline-light"
+                disabled={!loc}
+                active={mode === 'walk'}
+                onClick={() => handleChange('walk')}
+                data-testid="Walk"
+              >
+                <RiWalkLine/>
+              </Button>
+              <Button
+                variant="outline-light"
+                disabled={!loc}
+                active={mode === 'scoot'}
+                onClick={() => handleChange('scoot')}
+                data-testid="Scoot"
+              >
+                <RiEBike2Line/>
+              </Button>
+              <Button
+                variant="outline-light"
+                disabled={!loc}
+                active={mode === 'drive'}
+                onClick={() => handleChange('drive')}
+                data-testid="Drive"
+              >
+                <FaCarSide/>
+              </Button>
+            </ButtonGroup>
+          </Nav>
         </Navbar.Collapse>
       </Navbar>
       <Container fluid="sm">
