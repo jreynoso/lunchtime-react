@@ -17,8 +17,8 @@ test('should render page with mode buttons enabled', async () => {
     )
   }
 
-  const testRender = await render(<App/>)
-  expect(testRender.getByText('Walk')).toBeEnabled()
-  expect(testRender.getByText('Scoot')).toBeEnabled()
-  expect(testRender.getByText('Drive')).toBeEnabled()
+  const { getByTestId } = await render(<App/>)
+  expect(getByTestId('Walk')).toBeEnabled()
+  expect(getByTestId('Scoot')).toBeEnabled()
+  expect(getByTestId('Drive')).toBeEnabled()
 })

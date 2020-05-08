@@ -6,6 +6,8 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import { FaCarSide } from 'react-icons/fa'
+import { RiEBike2Line, RiWalkLine } from 'react-icons/ri'
 import LunchOptionList from './components/LunchOptionList'
 import fetchLunchOptions from './service/Lunchtime'
 import { getGeoLocation, getIpAddress } from './service/Location'
@@ -83,9 +85,9 @@ export default function App () {
     return () => setLunchOptions(null)
   }, [loc, mode])
 
-  const handleChange = (event) => {
-    if (mode !== event.target.value) {
-      setMode(event.target.value)
+  const handleChange = (value) => {
+    if (value && value !== mode) {
+      setMode(value)
     } else if (loc && mode) {
       handleFetchLunchOptions(loc, mode)
     }
@@ -105,9 +107,33 @@ export default function App () {
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
           <ButtonGroup title={'How will you get there?'} size="lg" className="ml-auto">
-            <Button variant="outline-light" disabled={!loc} onClick={handleChange} value="walk">{'Walk'}</Button>
-            <Button variant="outline-light" disabled={!loc} onClick={handleChange} value="scoot">{'Scoot'}</Button>
-            <Button variant="outline-light" disabled={!loc} onClick={handleChange} value="drive">{'Drive'}</Button>
+            <Button
+              variant="outline-light"
+              disabled={!loc}
+              active={mode === 'walk'}
+              onClick={() => handleChange('walk')}
+              data-testid="Walk"
+            >
+              <RiWalkLine/>
+            </Button>
+            <Button
+              variant="outline-light"
+              disabled={!loc}
+              active={mode === 'scoot'}
+              onClick={() => handleChange('scoot')}
+              data-testid="Scoot"
+            >
+              <RiEBike2Line/>
+            </Button>
+            <Button
+              variant="outline-light"
+              disabled={!loc}
+              active={mode === 'drive'}
+              onClick={() => handleChange('drive')}
+              data-testid="Drive"
+            >
+              <FaCarSide/>
+            </Button>
           </ButtonGroup>
         </Navbar.Collapse>
       </Navbar>

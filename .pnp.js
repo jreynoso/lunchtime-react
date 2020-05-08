@@ -122,6 +122,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:1.2.5"
       ],
       [
+        "react-icons",
+        "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:3.10.0"
+      ],
+      [
         "react-scripts",
         "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:3.4.1"
       ],
@@ -160,6 +164,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-bootstrap", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:1.0.0"],
             ["react-dom", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:16.12.0"],
             ["react-error-boundary", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:1.2.5"],
+            ["react-icons", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:3.10.0"],
             ["react-scripts", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:3.4.1"],
             ["typescript", "patch:typescript@npm%3A3.8.3#builtin<compat/typescript>::version=3.8.3&hash=270b6c"]
           ],
@@ -11508,6 +11513,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-bootstrap", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:1.0.0"],
             ["react-dom", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:16.12.0"],
             ["react-error-boundary", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:1.2.5"],
+            ["react-icons", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:3.10.0"],
             ["react-scripts", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:3.4.1"],
             ["typescript", "patch:typescript@npm%3A3.8.3#builtin<compat/typescript>::version=3.8.3&hash=270b6c"]
           ],
@@ -14841,6 +14847,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/react-error-overlay-npm-6.0.7-2914e1fee8-2.zip/node_modules/react-error-overlay/",
           "packageDependencies": [
             ["react-error-overlay", "npm:6.0.7"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["react-icons", [
+        ["virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:3.10.0", {
+          "packageLocation": "./.yarn/$$virtual/react-icons-virtual-b3a4002bdc/0/cache/react-icons-npm-3.10.0-a2589318d4-2.zip/node_modules/react-icons/",
+          "packageDependencies": [
+            ["react-icons", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:3.10.0"],
+            ["camelcase", "npm:5.3.1"],
+            ["react", "npm:16.12.0"]
+          ],
+          "packagePeers": [
+            "react"
           ],
           "linkType": "HARD",
         }]
