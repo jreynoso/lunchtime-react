@@ -10201,6 +10201,7 @@ fsevents@^1.2.7:
     eslint-plugin-standard: ^4.0.1
     faker: ^4.1.0
     jest: 25.3.0
+    mixpanel-browser: ^2.36.0
     prop-types: ^15.7.2
     react: 16.12.0
     react-bootstrap: ^1.0.0
@@ -10621,6 +10622,13 @@ fsevents@^1.2.7:
     for-in: ^0.1.3
     is-extendable: ^0.1.1
   checksum: 2/90adec767dff41d8f9917d729d786ddae6cc9c08dc69133851348042d35c74496079be88fd33e874315b11db535c7761b769a3c3a361f2fb1c2ec8b6672ecac0
+  languageName: node
+  linkType: hard
+
+"mixpanel-browser@npm:^2.36.0":
+  version: 2.36.0
+  resolution: "mixpanel-browser@npm:2.36.0"
+  checksum: 2/ee0445ed77a1601e6622afb568ad338406668741b906447ae61ed2d751fb51527c07aafb99378d503b055463703b337315f7e4546d9d4492319781783dc875f7
   languageName: node
   linkType: hard
 

@@ -98,6 +98,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:25.3.0"
       ],
       [
+        "mixpanel-browser",
+        "npm:2.36.0"
+      ],
+      [
         "prop-types",
         "npm:15.7.2"
       ],
@@ -150,6 +154,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-standard", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:4.0.1"],
             ["faker", "npm:4.1.0"],
             ["jest", "npm:25.3.0"],
+            ["mixpanel-browser", "npm:2.36.0"],
             ["prop-types", "npm:15.7.2"],
             ["react", "npm:16.12.0"],
             ["react-bootstrap", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:1.0.0"],
@@ -11497,6 +11502,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-standard", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:4.0.1"],
             ["faker", "npm:4.1.0"],
             ["jest", "npm:25.3.0"],
+            ["mixpanel-browser", "npm:2.36.0"],
             ["prop-types", "npm:15.7.2"],
             ["react", "npm:16.12.0"],
             ["react-bootstrap", "virtual:7d17bca73809cf2cd1ed4b0dbd33a327206a12cd2b15e0df99d2c845e0f5181b2bb46051f277b8e50eebca5be20e6539c7540809e08d584e7ec9c89097996b68#npm:1.0.0"],
@@ -11962,6 +11968,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["mixin-object", "npm:2.0.1"],
             ["for-in", "npm:0.1.8"],
             ["is-extendable", "npm:0.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["mixpanel-browser", [
+        ["npm:2.36.0", {
+          "packageLocation": "./.yarn/cache/mixpanel-browser-npm-2.36.0-5ba3908d61-2.zip/node_modules/mixpanel-browser/",
+          "packageDependencies": [
+            ["mixpanel-browser", "npm:2.36.0"]
           ],
           "linkType": "HARD",
         }]

@@ -1,11 +1,14 @@
 {
   "development": {
-    "lunchtime_api_url": "http://localhost:8080"
+    "lunchtime_api_url": "http://localhost:8080",
+    "mixpanel_token": "your-mixpanel-token"
   },
   "test": {
-    "lunchtime_api_url": "http://localhost:8080"
+    "lunchtime_api_url": "http://localhost:8080",
+    "mixpanel_token": "your-mixpanel-token"
   },
   "production": {
-    "lunchtime_api_url": "https://api.dispassionproject.com"
+    "lunchtime_api_url": "https://api.dispassionproject.com",
+    "mixpanel_token": "your-mixpanel-token"
   }
 }
