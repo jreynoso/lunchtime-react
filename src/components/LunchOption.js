@@ -4,16 +4,19 @@ import Media from 'react-bootstrap/Media'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import Rating from './Rating'
+import { Mixpanel } from '../mixpanel'
 
 export default function LunchOption ({ name, imageUrl, address, rating, lastItem, bgColor = 'none' }) {
-  const getGoogleMapsLink = (name) => {
-    return `https://www.google.com/maps/search/${encodeURIComponent(name).replace(/%20/g, '+')}`
+  const followLink = (evt, name) => {
+    evt.preventDefault()
+    Mixpanel.track('lunch_option_visited', { name })
+    window.location.href = `https://www.google.com/maps/search/${encodeURIComponent(name).replace(/%20/g, '+')}`
   }
 
   return (
     <Navbar>
       <Nav style={{ background: bgColor, width: '100%', marginBottom: lastItem ? 30 : 0 }}>
-        <Nav.Link href={getGoogleMapsLink(name)} className="mt-auto mb-auto" style={{ width: '100%' }}>
+        <Nav.Link href="#" onClick={(e) => followLink(e, name)} className="mt-auto mb-auto" style={{ width: '100%' }}>
           <Media>
             <img
               width={80}

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import mixpanel from 'mixpanel-browser'
 import Alert from 'react-bootstrap/Alert'
 import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
@@ -11,13 +10,7 @@ import { RiEBike2Line, RiWalkLine } from 'react-icons/ri'
 import LunchOptionList from './components/LunchOptionList'
 import fetchLunchOptions from './service/Lunchtime'
 import { getGeoLocation, getIpAddress } from './service/Location'
-import config from './config/config.json'
-
-const env = process.env.NODE_ENV || 'development'
-const envConfig = config[env]
-if (envConfig && envConfig.mixpanel_token) {
-  mixpanel.init(envConfig.mixpanel_token)
-}
+import { Mixpanel } from './mixpanel'
 
 export default function App () {
   const [ipAddress, setIpAddress] = useState(null)
@@ -29,19 +22,15 @@ export default function App () {
   const handleFetchLunchOptions = (loc, mode) => {
     fetchLunchOptions(loc, mode).then(
       (resultData) => {
-        if (mixpanel) {
-          const opts = {
-            mode,
-            options: (resultData && resultData.options) ? resultData.options.length : 0
-          }
-          mixpanel.track('page_view', opts)
+        const opts = {
+          mode,
+          options: (resultData && resultData.options) ? resultData.options.length : 0
         }
+        Mixpanel.track('page_view', opts)
         setLunchOptions(resultData)
       },
       () => {
-        if (mixpanel) {
-          mixpanel.track('page_view_error', { loc, mode })
-        }
+        Mixpanel.track('page_view_error', { loc, mode })
         setLunchOptions('error')
       }
     )
@@ -60,8 +49,8 @@ export default function App () {
   }, [])
 
   useEffect(() => {
-    if (ipAddress && mixpanel) {
-      mixpanel.identify(ipAddress)
+    if (ipAddress) {
+      Mixpanel.identify(ipAddress)
     }
   }, [ipAddress])
 
