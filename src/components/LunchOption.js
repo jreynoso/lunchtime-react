@@ -15,7 +15,7 @@ export default function LunchOption ({ name, imageUrl, address, rating, lastItem
 
   return (
     <Navbar>
-      <Nav style={{ background: bgColor, width: '100%', marginBottom: lastItem ? 30 : 0 }}>
+      <Nav style={{ background: bgColor, width: '100%', marginBottom: lastItem ? 60 : 0 }}>
         <Nav.Link href="#" onClick={(e) => followLink(e, name)} className="mt-auto mb-auto" style={{ width: '100%' }}>
           <Media>
             <img
